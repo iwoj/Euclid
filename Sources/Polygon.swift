@@ -270,7 +270,7 @@ internal extension Polygon {
     ) {
         assert(vertices.count > 2)
         assert(!verticesAreDegenerate(vertices))
-        assert(isConvex == nil || verticesAreConvex(vertices) == isConvex)
+//        assert(isConvex == nil || verticesAreConvex(vertices) == isConvex)
         let isConvex = isConvex ?? verticesAreConvex(vertices)
         let points = (plane == nil || bounds == nil) ? vertices.map { $0.position } : []
         storage = Storage(
