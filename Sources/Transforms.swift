@@ -31,7 +31,7 @@
 
 import Foundation
 
-public struct Transform: Hashable {
+public struct Transform: Hashable, Codable {
     public var offset: Vector
     public var rotation: Rotation
     public var scale: Vector

@@ -30,7 +30,7 @@
 //
 
 /// A planar polygon
-public struct Polygon: Hashable {
+public struct Polygon: Hashable, Codable {
     private var storage: Storage
 
     // Used to track split/join
@@ -516,7 +516,7 @@ internal extension Polygon {
 }
 
 private extension Polygon {
-    final class Storage: Hashable {
+    final class Storage: Hashable, Codable {
         let vertices: [Vertex]
         let plane: Plane
         var boundsIfSet: Bounds?

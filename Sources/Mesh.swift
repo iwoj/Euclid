@@ -30,7 +30,7 @@
 //
 
 /// A 3D surface constructed from polygons
-public struct Mesh: Hashable {
+public struct Mesh: Hashable, Codable {
     private let storage: Storage
 }
 
@@ -113,7 +113,7 @@ internal extension Mesh {
 }
 
 private extension Mesh {
-    final class Storage: Hashable {
+    final class Storage: Hashable, Codable {
         let polygons: [Polygon]
         var boundsIfSet: Bounds?
         let isConvex: Bool

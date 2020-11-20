@@ -6,10 +6,10 @@
 //  Copyright © 2020 Nick Lockwood. All rights reserved.
 //
 
-struct BSP {
+struct BSP: Codable {
     private let root: BSPNode?
 
-    enum ClipRule {
+    enum ClipRule: Codable {
         case greaterThan
         case greaterThanEqual
         case lessThan
@@ -31,7 +31,7 @@ struct BSP {
 }
 
 // See https://github.com/wangyi-fudan/wyhash/
-private struct DeterministicRNG: RandomNumberGenerator {
+private struct DeterministicRNG: RandomNumberGenerator, Codable {
     private var seed: UInt64 = 0
 
     mutating func next() -> UInt64 {
@@ -41,7 +41,7 @@ private struct DeterministicRNG: RandomNumberGenerator {
     }
 }
 
-private class BSPNode {
+private class BSPNode: Codable {
     private weak var parent: BSPNode?
     private var front: BSPNode?
     private var back: BSPNode?

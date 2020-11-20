@@ -32,7 +32,7 @@
 import Foundation
 
 /// A distance or position in 3D space
-public struct Vector: Hashable {
+public struct Vector: Hashable, Codable {
     public var x, y, z: Double
 
     public init(_ x: Double, _ y: Double, _ z: Double = 0) {

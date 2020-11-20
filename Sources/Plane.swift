@@ -30,7 +30,7 @@
 //
 
 /// Represents a 2D plane in 3D space.
-public struct Plane: Hashable {
+public struct Plane: Hashable, Codable {
     public let normal: Vector
     public let w: Double
 
@@ -133,7 +133,7 @@ internal extension Plane {
 }
 
 // An enum of relationships between a group of points and a plane
-enum PlaneComparison: Int {
+enum PlaneComparison: Int, Codable {
     case coplanar = 0
     case front = 1
     case back = 2
@@ -146,7 +146,7 @@ enum PlaneComparison: Int {
 
 // An enum of planes along the X, Y and Z axes
 // Used internally for flattening 3D paths and polygons
-enum FlatteningPlane: RawRepresentable {
+enum FlatteningPlane: RawRepresentable, Codable {
     case xy, xz, yz
 
     var rawValue: Plane {

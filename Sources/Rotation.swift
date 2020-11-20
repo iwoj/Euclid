@@ -9,7 +9,7 @@
 import Foundation
 
 // a rotation matrix
-public struct Rotation: Hashable {
+public struct Rotation: Hashable, Codable {
     var m11, m12, m13, m21, m22, m23, m31, m32, m33: Double
 
     /// Define a rotation using 3x3 matrix coefficients

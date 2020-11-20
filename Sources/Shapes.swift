@@ -68,7 +68,7 @@ public extension Path {
 
     /// Create a quadratic bezier spline
     static func curve(_ points: [PathPoint], detail: Int = 4) -> Path {
-        enum ArcRange {
+        enum ArcRange: Codable {
             case lhs, rhs, all
         }
 
@@ -172,14 +172,14 @@ public extension Path {
 }
 
 public extension Mesh {
-    enum Faces {
+    enum Faces: Codable {
         case front
         case back
         case frontAndBack
         case `default`
     }
 
-    enum WrapMode {
+    enum WrapMode: Codable {
         case shrink
         case tube
         case `default`

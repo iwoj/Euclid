@@ -30,7 +30,7 @@
 //
 
 /// A polygon vertex
-public struct Vertex: Hashable {
+public struct Vertex: Hashable, Codable {
     public var position: Vector {
         didSet { position = position.quantized() }
     }

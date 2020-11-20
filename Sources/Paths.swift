@@ -32,7 +32,7 @@
 import Foundation
 
 /// A control point on a path. Can represent a corner or a curve.
-public struct PathPoint: Hashable {
+public struct PathPoint: Hashable, Codable {
     public var position: Vector
     public var isCurved: Bool
 }
@@ -66,7 +66,7 @@ public extension PathPoint {
 }
 
 /// A 3D path
-public struct Path: Hashable {
+public struct Path: Hashable, Codable {
     public let points: [PathPoint]
     public let isClosed: Bool
     public let bounds: Bounds
